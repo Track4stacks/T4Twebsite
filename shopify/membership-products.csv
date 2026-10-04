@@ -1,0 +1,13 @@
+Handle,Title,Body (HTML),Vendor,Type,Tags,Published,Option1 Name,Option1 Value,Option2 Name,Option2 Value,Variant SKU,Variant Grams,Variant Inventory Tracker,Variant Inventory Policy,Variant Fulfillment Service,Variant Price,Variant Requires Shipping,Variant Taxable,Gift Card,Status
+dog-gym-membership,Dog Gym Membership,"<p>Choose your dog count and visit frequency: biweekly (every other week), weekly, or twice a week.</p><p>Base prices cover a four-week membership period. Renewal schedules and exact recurring terms appear at checkout. Membership payment does not automatically reserve appointment times.</p>",Tracks 4 Treats,Dog gym membership,"membership,recurring,dog-gym",FALSE,Dogs,1 dog,Visit frequency,Biweekly (every other week),T4T-1-BW,0,,continue,manual,120.00,FALSE,TRUE,FALSE,draft
+dog-gym-membership,,,,,,,,1 dog,,Weekly,T4T-1-W,0,,continue,manual,220.00,FALSE,TRUE,,
+dog-gym-membership,,,,,,,,1 dog,,Twice a week,T4T-1-TW,0,,continue,manual,400.00,FALSE,TRUE,,
+dog-gym-membership,,,,,,,,2 dogs,,Biweekly (every other week),T4T-2-BW,0,,continue,manual,160.00,FALSE,TRUE,,
+dog-gym-membership,,,,,,,,2 dogs,,Weekly,T4T-2-W,0,,continue,manual,300.00,FALSE,TRUE,,
+dog-gym-membership,,,,,,,,2 dogs,,Twice a week,T4T-2-TW,0,,continue,manual,560.00,FALSE,TRUE,,
+dog-gym-membership,,,,,,,,3 dogs,,Biweekly (every other week),T4T-3-BW,0,,continue,manual,190.00,FALSE,TRUE,,
+dog-gym-membership,,,,,,,,3 dogs,,Weekly,T4T-3-W,0,,continue,manual,360.00,FALSE,TRUE,,
+dog-gym-membership,,,,,,,,3 dogs,,Twice a week,T4T-3-TW,0,,continue,manual,680.00,FALSE,TRUE,,
+dog-gym-membership,,,,,,,,4 dogs,,Biweekly (every other week),T4T-4-BW,0,,continue,manual,240.00,FALSE,TRUE,,
+dog-gym-membership,,,,,,,,4 dogs,,Weekly,T4T-4-W,0,,continue,manual,460.00,FALSE,TRUE,,
+dog-gym-membership,,,,,,,,4 dogs,,Twice a week,T4T-4-TW,0,,continue,manual,880.00,FALSE,TRUE,,

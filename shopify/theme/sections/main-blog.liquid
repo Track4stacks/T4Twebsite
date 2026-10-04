@@ -1,0 +1,7 @@
+<section class="t4t-page"><h1>{{ blog.title | escape }}</h1>{% paginate blog.articles by 9 %}<div class="t4t-products">{% for article in blog.articles %}<article><h2><a href="{{ article.url }}">{{ article.title | escape }}</a></h2><p>{{ article.excerpt_or_content | strip_html | truncate: 160 }}</p></article>{% endfor %}</div><div class="pagination">{{ paginate | default_pagination }}</div>{% endpaginate %}</section>
+{% schema %}
+{
+  "name": "Blog",
+  "settings": []
+}
+{% endschema %}

@@ -1,0 +1,14 @@
+<footer class="footer"><div class="footer-top"><a class="brand" href="{{ routes.root_url }}" aria-label="{{ shop.name | escape }}">{% render 't4t-image', image: settings.logo, fallback: 'tracks4treats-logo.png', width: 260, height: 101, loading: 'eager', sizes: '220px', alt: shop.name, image_class: 'official-logo' %}</a><p>{{ section.settings.tagline | escape }}</p>{% if settings.instagram_url != blank %}<a href="{{ settings.instagram_url }}" target="_blank" rel="noopener">Follow the pack on Instagram</a>{% endif %}</div><div class="footer-bottom"><span>© {{ 'now' | date: '%Y' }} {{ shop.name | escape }}</span><a href="mailto:{{ settings.contact_email | escape }}">{{ settings.contact_email | escape }}</a><a href="tel:{{ settings.phone | remove: ' ' | remove: '(' | remove: ')' | remove: '-' }}">{{ settings.phone | escape }}</a><a href="{{ routes.cart_url }}">Cart ({{ cart.item_count }})</a><a href="{{ routes.account_url }}">My account</a></div><div class="policy-links">{% for policy in shop.policies %}{% if policy != blank %}<a href="{{ policy.url }}">{{ policy.title | escape }}</a>{% endif %}{% endfor %}{% if settings.membership_portal_url != blank %}<a href="{{ settings.membership_portal_url }}">Manage my membership</a>{% endif %}</div></footer>
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline",
+      "default": "Good dogs deserve great days."
+    }
+  ]
+}
+{% endschema %}

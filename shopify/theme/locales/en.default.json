@@ -1,0 +1,21 @@
+{
+  "accessibility": {
+    "skip": "Skip to content"
+  },
+  "products": {
+    "add_to_cart": "Add to cart",
+    "sold_out": "Sold out",
+    "choose_variant": "Choose your option",
+    "quantity": "Quantity"
+  },
+  "cart": {
+    "title": "Your cart",
+    "empty": "Your cart is empty.",
+    "checkout": "Continue to checkout",
+    "update": "Update cart",
+    "remove": "Remove"
+  },
+  "general": {
+    "back_home": "Back to home"
+  }
+}

@@ -1,0 +1,7 @@
+<article class="t4t-page"><h1>{{ article.title | escape }}</h1><p>{{ article.published_at | date: '%B %d, %Y' }}</p><div class="rte">{{ article.content }}</div><a href="{{ blog.url }}">Back to {{ blog.title | escape }}</a></article>
+{% schema %}
+{
+  "name": "Article",
+  "settings": []
+}
+{% endschema %}

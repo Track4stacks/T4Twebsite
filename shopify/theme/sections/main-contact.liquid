@@ -1,0 +1,7 @@
+<section class="t4t-page"><h1>{{ page.title | escape }}</h1><div class="rte">{{ page.content }}</div>{% form 'contact' %}{% if form.posted_successfully? %}<p role="status">Thanks for reaching out. We’ll be in touch.</p>{% endif %}{{ form.errors | default_errors }}<label for="ContactName">Name</label><input id="ContactName" name="contact[name]" autocomplete="name" required><label for="ContactEmail">Email</label><input id="ContactEmail" name="contact[email]" type="email" autocomplete="email" required><label for="ContactMessage">How can we help?</label><textarea id="ContactMessage" name="contact[body]" rows="5" required></textarea><p><button class="button" type="submit">Send message</button></p>{% endform %}</section>
+{% schema %}
+{
+  "name": "Contact",
+  "settings": []
+}
+{% endschema %}

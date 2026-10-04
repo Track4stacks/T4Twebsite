@@ -1,0 +1,43 @@
+{
+  "sections": {
+    "main": {
+      "type": "t4t-memberships",
+      "settings": {},
+      "blocks": {
+        "block1": {
+          "type": "membership",
+          "settings": {
+            "title": "Trot",
+            "frequency": "EVERY OTHER WEEK",
+            "description": "<p>A gentle start to a regular routine.</p>"
+          }
+        },
+        "block2": {
+          "type": "membership",
+          "settings": {
+            "title": "Stride",
+            "frequency": "ONCE A WEEK",
+            "featured": true,
+            "description": "<p>A weekly visit to keep the good energy going.</p>"
+          }
+        },
+        "block3": {
+          "type": "membership",
+          "settings": {
+            "title": "Sprint",
+            "frequency": "TWICE A WEEK",
+            "description": "<p>Two weekly visits for your high-energy crew.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "block1",
+        "block2",
+        "block3"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

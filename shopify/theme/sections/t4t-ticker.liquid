@@ -1,0 +1,52 @@
+<div class="ticker">{% for block in section.blocks %}<span {{ block.shopify_attributes }}>{{ block.settings.text | escape }}</span><b aria-hidden="true">✳</b>{% endfor %}</div>
+{% schema %}
+{
+  "name": "Service highlights",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "highlight",
+      "name": "Highlight",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "WE COME TO YOU"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Service highlights",
+      "blocks": [
+        {
+          "type": "highlight",
+          "settings": {
+            "text": "WE COME TO YOU"
+          }
+        },
+        {
+          "type": "highlight",
+          "settings": {
+            "text": "CLIMATE-CONTROLLED"
+          }
+        },
+        {
+          "type": "highlight",
+          "settings": {
+            "text": "DOG-POWERED TREADMILLS"
+          }
+        },
+        {
+          "type": "highlight",
+          "settings": {
+            "text": "TAIL-WAGGING ENERGY"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

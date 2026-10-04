@@ -1,0 +1,19 @@
+<header class="header"><a class="brand" href="{{ routes.root_url }}" aria-label="{{ shop.name | escape }}">{% render 't4t-image', image: settings.logo, fallback: 'tracks4treats-logo.png', width: 260, height: 101, loading: 'eager', sizes: '220px', alt: shop.name, image_class: 'official-logo' %}</a><nav aria-label="Main navigation">{% if section.settings.menu != blank %}{% for link in section.settings.menu.links %}<a href="{{ link.url }}"{% if link.current %} aria-current="page"{% endif %}>{{ link.title | escape }}</a>{% endfor %}{% else %}<a href="{{ routes.root_url }}#experience">The experience</a><a href="{{ routes.root_url }}#pricing">Pricing</a><a href="{{ routes.root_url }}#memberships">Memberships</a>{% endif %}</nav><details class="t4t-menu-mobile"><summary>Menu</summary><div class="mobile-links">{% if section.settings.menu != blank %}{% for link in section.settings.menu.links %}<a href="{{ link.url }}">{{ link.title | escape }}</a>{% endfor %}{% else %}<a href="{{ routes.root_url }}#experience">The experience</a><a href="{{ routes.root_url }}#pricing">Pricing</a><a href="{{ routes.root_url }}#memberships">Memberships</a>{% endif %}<a href="{{ routes.cart_url }}">Cart ({{ cart.item_count }})</a></div></details><a class="button small" href="{% if settings.booking_page != blank %}{{ settings.booking_page.url }}{% else %}{{ routes.root_url }}pages/booking{% endif %}">{{ section.settings.button_label | escape }}</a></header>
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Navigation menu"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Booking label",
+      "default": "Book a run"
+    }
+  ]
+}
+{% endschema %}

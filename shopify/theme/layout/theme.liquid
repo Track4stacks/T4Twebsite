@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="{{ settings.color_background }}">
+<link rel="canonical" href="{{ canonical_url }}">
+<title>{{ page_title | escape }}{% if current_page != 1 %} – Page {{ current_page }}{% endif %}{% unless page_title contains shop.name %} – {{ shop.name | escape }}{% endunless %}</title>
+{% if page_description %}<meta name="description" content="{{ page_description | escape }}">{% endif %}
+<meta property="og:site_name" content="{{ shop.name | escape }}"><meta property="og:title" content="{{ page_title | escape }}"><meta property="og:url" content="{{ canonical_url }}"><meta property="og:type" content="website">
+{% if page_description %}<meta property="og:description" content="{{ page_description | escape }}">{% endif %}
+{% if settings.favicon != blank %}<link rel="icon" href="{{ settings.favicon | image_url: width: 32 }}">{% else %}<link rel="icon" href="{{ 'hero-dog.png' | asset_url }}">{% endif %}
+{{ 'theme.css' | asset_url | stylesheet_tag }}
+{% style %}
+  {{ settings.type_body | font_face: font_display: 'swap' }}
+  {{ settings.type_heading | font_face: font_display: 'swap' }}
+  :root { --theme-body-font: {{ settings.type_body.family }}, {{ settings.type_body.fallback_families }}; --theme-heading-font: {{ settings.type_heading.family }}, {{ settings.type_heading.fallback_families }}; --ink: {{ settings.color_text }}; --paper: {{ settings.color_background }}; --lime: {{ settings.color_accent }}; --sky: {{ settings.color_blue }}; --green: {{ settings.color_button }}; }
+{% endstyle %}
+<script src="{{ 'theme.js' | asset_url }}" defer></script>
+{{ content_for_header }}
+</head>
+<body class="template-{{ template.name }}">
+<a class="skip" href="#MainContent">{{ 'accessibility.skip' | t }}</a>
+{% sections 'header-group' %}
+<main id="MainContent" tabindex="-1">{{ content_for_layout }}</main>
+{% sections 'footer-group' %}
+</body></html>

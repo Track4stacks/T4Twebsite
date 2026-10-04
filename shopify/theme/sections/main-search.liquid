@@ -1,0 +1,7 @@
+<section class="t4t-page"><h1>Search</h1><form action="{{ routes.search_url }}" method="get"><label for="Search">Search the shop</label><input id="Search" type="search" name="q" value="{{ search.terms | escape }}"><button class="button" type="submit">Search</button></form>{% if search.performed %}{% paginate search.results by 12 %}<div class="t4t-products">{% for result in search.results %}<article><h2><a href="{{ result.url }}">{{ result.title | escape }}</a></h2>{% if result.object_type == 'product' %}<p>{{ result.price | money_with_currency }}</p>{% endif %}</article>{% else %}<p>No results found.</p>{% endfor %}</div><div class="pagination">{{ paginate | default_pagination }}</div>{% endpaginate %}{% endif %}</section>
+{% schema %}
+{
+  "name": "Search",
+  "settings": []
+}
+{% endschema %}

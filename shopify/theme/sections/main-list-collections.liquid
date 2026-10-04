@@ -1,0 +1,7 @@
+<section class="t4t-page"><h1>Collections</h1><div class="t4t-products">{% for collection in collections %}<article><h2><a href="{{ collection.url }}">{{ collection.title | escape }}</a></h2></article>{% endfor %}</div></section>
+{% schema %}
+{
+  "name": "Collections",
+  "settings": []
+}
+{% endschema %}

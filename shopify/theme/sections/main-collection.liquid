@@ -1,0 +1,7 @@
+<section class="t4t-page"><h1>{{ collection.title | escape }}</h1><div class="rte">{{ collection.description }}</div>{% paginate collection.products by 12 %}<div class="t4t-products">{% for product in collection.products %}<article><a href="{{ product.url }}">{% if product.featured_image %}{{ product.featured_image | image_url: width: 700 | image_tag: loading: 'lazy', widths: '300, 500, 700', sizes: '(min-width: 750px) 33vw, 50vw' }}{% endif %}<h2>{{ product.title | escape }}</h2><p>{{ product.price | money_with_currency }}{% if product.price_varies %} and up{% endif %}</p></a></article>{% else %}<p>No products are available in this collection yet.</p>{% endfor %}</div><div class="pagination">{{ paginate | default_pagination }}</div>{% endpaginate %}</section>
+{% schema %}
+{
+  "name": "Collection",
+  "settings": []
+}
+{% endschema %}

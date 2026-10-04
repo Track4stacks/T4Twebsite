@@ -1,0 +1,31 @@
+<section class="area section"><div><p class="eyebrow">{{ section.settings.eyebrow | escape }}</p><h2>{{ section.settings.heading | escape | newline_to_br }}</h2><p>A mobile gym made for Austin dogs and the humans who love them. See whether we’re rolling through your neighborhood.</p><div class="area-actions"><a class="button" href="{{ settings.service_area_url }}" target="_blank" rel="noopener">Check our service area</a><a class="text-link" href="https://tracks4treats.com/service-area-waitlist/" target="_blank" rel="noopener">Join the area waitlist</a></div><div class="hours"><span>WHEN WE RUN</span><p>Monday–Friday <b>4:30 PM–10 PM</b><br>Saturday–Sunday <b>8:30 AM–10 PM</b></p></div></div><figure>{% render 't4t-image', image: section.settings.image_1, fallback: 'dog-gym.jpg', width: 1600, height: 1200, loading: 'lazy', sizes: '(min-width: 750px) 50vw, 100vw', alt: 'The Tracks 4 Treats mobile dog gym van in Austin', image_class: '' %}<figcaption>YOUR DOG’S NEXT FAVORITE ARRIVAL.</figcaption></figure></section>
+{% schema %}
+{
+  "name": "Service area",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Photo"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Local roots.\nHappy paws."
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "AUSTIN, THIS ONE\u2019S FOR YOUR DOG."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Area"
+    }
+  ],
+  "limit": 1
+}
+{% endschema %}

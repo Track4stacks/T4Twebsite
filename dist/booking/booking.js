@@ -8,7 +8,9 @@ const serviceOptions = {
   4: {count:4, price:120, duration:60, title:'The whole happy crew.'}
 };
 const $ = selector => document.querySelector(selector);
-const state = {step:0, count:1, date:null, time:null, week:0};
+const state = {step:0, count:1, date:null, time:null, week:0, purchase:"once", plan:"stride", billingWeeks:4, sprint:2};
+const membershipRates={1:{trot:60,stride:55,sprint:50},2:{trot:80,stride:75,sprint:70},3:{trot:95,stride:90,sprint:85},4:{trot:120,stride:115,sprint:110}};
+function membership(){ const frequency=state.plan==="trot"?0.5:state.plan==="stride"?1:state.sprint; const rate=membershipRates[state.count][state.plan];return {name:({trot:'Biweekly',stride:'Weekly',sprint:'Twice a week'})[state.plan],rate,visits:frequency*4,total:rate*frequency*state.billingWeeks,cadence:state.billingWeeks===1?"every week":`every ${state.billingWeeks} weeks`}; }
 const todayParts = new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
 const part = type => todayParts.find(p => p.type === type).value;
 const firstDay = new Date(`${part('year')}-${part('month')}-${part('day')}T12:00:00Z`);
@@ -19,7 +21,12 @@ function updateSummary(){
   const s = serviceOptions[state.count];
   $('#summary-service').textContent=s.title;
   $('#summary-dogs').textContent=`${s.count} ${s.count===1?'dog':'dogs'} · ${s.duration} minutes`;
-  $('#summary-price').textContent=money(s.price);
+  const m=membership();const recurring=state.purchase==='membership';
+  $('#summary-price').textContent=recurring?money(m.total):money(s.price);
+  if(recurring){$('#summary-service').textContent=`${m.name} membership`;$('#summary-dogs').textContent=`${s.count} ${s.count===1?'dog':'dogs'} · ${m.cadence}`;}
+  $('.membership-options').hidden=!recurring;
+  $('#membership-total').textContent=`${money(m.total)} ${m.cadence}`;$('#membership-detail').textContent=`${m.visits} visits per 4-week period · ${money(m.rate)} per household visit · before applicable taxes`;
+  $('#renewal-consent').checked=false;
   $('#summary-date').textContent=state.date&&state.time?`${longDate(state.date)} · ${state.time} · Austin time (example)`:'Choose a day and time next.';
 }
 function renderDogs(){
@@ -61,8 +68,10 @@ function review(){
   $('#review-dogs').textContent=Array.from({length:state.count},(_,i)=>values.get(`dog${i+1}`)).join(', ');
   $('#review-when').textContent=`${longDate(state.date)} at ${state.time}, Austin time · example`;
   $('#review-address').textContent=`${values.get('address')}, ${values.get('city')}, TX ${values.get('zip')}`;
-  $('#review-email').textContent=values.get('email');$('#review-total').textContent=money(serviceOptions[state.count].price);setStep(3);
+  $('#review-email').textContent=values.get('email');const m=membership();const recurring=state.purchase==='membership';$('#review-total').textContent=money(recurring?m.total:serviceOptions[state.count].price);$('#review-total-label').textContent=recurring?`Recurring charge · ${m.cadence}`:'Session price';$('#renewal-review').hidden=!recurring;$('#renewal-copy').textContent=`${m.name} · ${money(m.total)} ${m.cadence}, before applicable taxes.`;$('#renewal-sessions').textContent=`${m.visits} household visits per four-week period. The selected date is the first example visit; recurring dates must be arranged separately.`;$('#renewal-consent-copy').textContent=`I understand this example shows an automatic charge of ${money(m.total)} ${m.cadence}.`;$('#renewal-consent').checked=false;setStep(3);
 }
+document.querySelectorAll('[name="purchase"]').forEach(input=>input.addEventListener('change',()=>{state.purchase=input.value;updateSummary();}));
+$('[name="membership-plan"]').addEventListener('change',e=>{state.plan=e.target.value;updateSummary();});
 document.querySelectorAll('[name="service"]').forEach(input=>input.addEventListener('change',()=>{state.count=Number(input.value);updateSummary();renderDogs();}));
 document.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',()=>{
   if(state.step===1&&(!state.date||!state.time)){const err=$('#time-error');err.textContent='Choose an example date and time to continue.';return;}
@@ -77,5 +86,5 @@ $('#sample-details').addEventListener('click',()=>{
   for(const [key,value]of Object.entries(sample))f.elements.namedItem(key).value=value;
   const dogs=['Biscuit','Scout','Maple','Finn'];for(let i=0;i<state.count;i++)f.elements.namedItem(`dog${i+1}`).value=dogs[i];f.elements.namedItem('area').checked=true;
 });
-$('#restart').addEventListener('click',()=>{$('#details-form').reset();state.date=null;state.time=null;state.week=0;state.count=1;$('[name="service"][value="1"]').checked=true;renderDates();renderTimes();renderDogs();updateSummary();setStep(0);});
+$('#restart').addEventListener('click',()=>{$('#details-form').reset();state.date=null;state.time=null;state.week=0;state.count=1;state.purchase='once';$('[name="purchase"][value="once"]').checked=true;$('[name="service"][value="1"]').checked=true;renderDates();renderTimes();renderDogs();updateSummary();setStep(0);});
 renderDogs();renderDates();renderTimes();updateSummary();

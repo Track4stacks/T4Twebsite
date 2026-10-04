@@ -1,0 +1,48 @@
+{{ 'journey.css' | asset_url | stylesheet_tag }}<script src="{{ 'journey.js' | asset_url }}" defer></script>
+<t4t-journey class="section dog-journey" id="experience"><div class="journey-heading"><div><p class="eyebrow">FIVE PHASES. ONE VERY GOOD DOG.</p><h2>{{ section.settings.heading | escape | newline_to_br }}</h2></div><p>{{ section.settings.intro | escape }}<small>Every dog progresses differently. These are milestones, not a race or a fixed session timeline.</small></p></div>
+<div class="journey-layout"><div class="journey-sticky"><div class="journey-visual" data-phase="0"><div class="journey-visual-top"><span>THE DOG-POWERED EXPERIENCE</span><button class="motion-toggle" type="button" aria-pressed="false">Pause animation</button></div><svg class="journey-dog" viewBox="0 0 600 400" role="img" aria-label="Illustrated dog learning to run on a dog-powered treadmill">
+<ellipse cx="300" cy="354" rx="226" ry="18" fill="#c7d9c5"/>
+<path d="M128 326v25m351-25v25" stroke="#334e3b" stroke-width="14" stroke-linecap="round"/>
+<rect x="79" y="294" width="445" height="41" rx="20" fill="#294735"/>
+<svg x="94" y="298" width="414" height="22" viewBox="0 0 414 22"><g class="belt-treads" fill="#9ab29c"><rect x="-30" y="3" width="5" height="16" rx="2"/><rect x="-6" y="3" width="5" height="16" rx="2"/><rect x="18" y="3" width="5" height="16" rx="2"/><rect x="42" y="3" width="5" height="16" rx="2"/><rect x="66" y="3" width="5" height="16" rx="2"/><rect x="90" y="3" width="5" height="16" rx="2"/><rect x="114" y="3" width="5" height="16" rx="2"/><rect x="138" y="3" width="5" height="16" rx="2"/><rect x="162" y="3" width="5" height="16" rx="2"/><rect x="186" y="3" width="5" height="16" rx="2"/><rect x="210" y="3" width="5" height="16" rx="2"/><rect x="234" y="3" width="5" height="16" rx="2"/><rect x="258" y="3" width="5" height="16" rx="2"/><rect x="282" y="3" width="5" height="16" rx="2"/><rect x="306" y="3" width="5" height="16" rx="2"/><rect x="330" y="3" width="5" height="16" rx="2"/><rect x="354" y="3" width="5" height="16" rx="2"/><rect x="378" y="3" width="5" height="16" rx="2"/><rect x="402" y="3" width="5" height="16" rx="2"/><rect x="426" y="3" width="5" height="16" rx="2"/><rect x="450" y="3" width="5" height="16" rx="2"/><rect x="474" y="3" width="5" height="16" rx="2"/></g></svg>
+<path d="M118 294V139q0-15 15-15h356v170" fill="none" stroke="#7bafe7" stroke-width="12" stroke-linecap="round"/>
+<path d="M292 126v58" stroke="#526453" stroke-width="5"/>
+<g class="dog-body"><g class="dog-tail"><path d="M213 205Q147 195 151 145" fill="none" stroke="#b57036" stroke-width="24" stroke-linecap="round"/><path d="M151 149l-2-15" stroke="#fff5db" stroke-width="22" stroke-linecap="round"/></g>
+<g class="leg back-leg"><path d="M246 222l-10 38 18 31h17" fill="none" stroke="#a36230" stroke-width="18" stroke-linecap="round"/></g><g class="leg front-leg far-leg"><path d="M352 217l-4 40 17 34h17" fill="none" stroke="#a36230" stroke-width="17" stroke-linecap="round"/></g>
+<path d="M205 213q-4-35 53-35h74q33-3 41-30l29 18-23 57q-5 23-43 21h-83q-45 0-48-31" fill="#d9954e"/>
+<path d="M340 190q10 25 32 17l-13 30-32 7z" fill="#fff1d6"/>
+<g class="leg rear-leg"><path d="M237 222l-9 37-16 33h18" fill="none" stroke="#d9954e" stroke-width="20" stroke-linecap="round"/></g>
+<g class="leg front-leg near-leg"><path d="M333 224l8 36-5 32h19" fill="none" stroke="#e5a75c" stroke-width="19" stroke-linecap="round"/></g>
+<path d="M292 181l-3 63m-21-61-5 59" stroke="#327342" stroke-width="11"/><path d="M270 204h23" stroke="#327342" stroke-width="10"/>
+<g class="dog-head"><path d="M348 151q-3-37 31-42 33-1 37 28l23 10q11 8-1 19l-35 12-40-4z" fill="#e5a75c"/><path d="M355 119q-31-1-26 28l13 28q15 8 23-9l9-36z" fill="#a96330"/><path d="M405 145l29 1q14 4 7 16l-28 13-12-9z" fill="#fff1d6"/><ellipse cx="438" cy="149" rx="9" ry="7" fill="#2c241d"/><circle cx="397" cy="134" r="4" fill="#2c241d"/><circle cx="398" cy="133" r="1.4" fill="white"/><path d="M402 163q11 15 25 0" fill="#543726"/><path class="dog-tongue" d="M414 169v13q7 9 10-1v-14" fill="#e98c83"/></g></g>
+<g fill="#dda154"><path d="M473 83l3 10 10 3-10 3-3 10-3-10-10-3 10-3z"/><path d="M114 212l2 7 7 2-7 2-2 7-2-7-7-2 7-2z"/></g></svg><div class="journey-visual-bottom"><span class="journey-state">Getting comfortable</span><span>01 / 05</span></div></div><div class="journey-switches" role="group" aria-label="Explore the five phases"><button type="button" data-phase-select="0" aria-label="Phase 1: A little unsure." aria-pressed="true">01</button><button type="button" data-phase-select="1" aria-label="Phase 2: One paw at a time." aria-pressed="false">02</button><button type="button" data-phase-select="2" aria-label="Phase 3: Finding their rhythm." aria-pressed="false">03</button><button type="button" data-phase-select="3" aria-label="Phase 4: Let’s try a little more." aria-pressed="false">04</button><button type="button" data-phase-select="4" aria-label="Phase 5: Free reign. Full joy." aria-pressed="false">05</button></div><div class="journey-chart"><div><p class="eyebrow">LITTLE WINS ADD UP</p><span>Illustrative progress</span></div><svg viewBox="0 0 460 110" role="img" aria-label="Example confidence trend rising over five milestones; illustrative, not measured dog data"><path d="M20 20H440M20 55H440M20 90H440" stroke="#e0dacd" stroke-dasharray="3 5"/><path d="M25 90Q78 91 125 73T230 57T335 32T435 12" fill="none" stroke="#327342" stroke-width="4" stroke-linecap="round"/><circle data-chart-point="0" cx="25" cy="90" r="6" fill="#fff9ee" stroke="#327342" stroke-width="3"/><circle data-chart-point="1" cx="125" cy="73" r="6" fill="#fff9ee" stroke="#327342" stroke-width="3"/><circle data-chart-point="2" cx="230" cy="57" r="6" fill="#fff9ee" stroke="#327342" stroke-width="3"/><circle data-chart-point="3" cx="335" cy="32" r="6" fill="#fff9ee" stroke="#327342" stroke-width="3"/><circle data-chart-point="4" cx="435" cy="12" r="6" fill="#fff9ee" stroke="#327342" stroke-width="3"/></svg><div class="chart-labels"><span>First introduction</span><span>Growing confidence</span></div><p class="chart-note">An example journey, not a measured result. Real progress may include pauses, repeat phases, and smaller wins.</p></div></div><div class="journey-stages"><article class="journey-stage is-active" data-stage="0"><span class="stage-number">PHASE 01</span><h3>A little unsure.</h3><p class="stage-subtitle">The first brave moment.</p><p>New space. New sounds. Paws planted firmly on the belt. Some pups hesitate before taking a step. We give them time to get comfortable.</p><div class="stage-benefit"><span>✳</span> A calm introduction</div></article><article class="journey-stage" data-stage="1"><span class="stage-number">PHASE 02</span><h3>One paw at a time.</h3><p class="stage-subtitle">Small steps. Big courage.</p><p>A little confidence arrives. They begin stepping forward, concentrating on where each paw lands. Every little step is a win.</p><div class="stage-benefit"><span>✳</span> Focus & coordination</div></article><article class="journey-stage" data-stage="2"><span class="stage-number">PHASE 03</span><h3>Finding their rhythm.</h3><p class="stage-subtitle">Look who’s got this.</p><p>Those careful steps become a steady pattern. Your dog finds a comfortable rhythm and keeps the belt moving under their own power.</p><div class="stage-benefit"><span>✳</span> A consistent rhythm</div></article><article class="journey-stage" data-stage="3"><span class="stage-number">PHASE 04</span><h3>Let’s try a little more.</h3><p class="stage-subtitle">Their pace. Their choice.</p><p>Speed up. Slow down. Stop. Start again. With a rhythm established, they explore how their movement changes the belt’s speed.</p><div class="stage-benefit"><span>✳</span> Choice & confidence</div></article><article class="journey-stage" data-stage="4"><span class="stage-number">PHASE 05</span><h3>Free reign. Full joy.</h3><p class="stage-subtitle">That’s one happy runner.</p><p>They know the ropes and move with confidence, exploring what they can do. Their coach stays close, with breaks and a pace that suits the dog.</p><div class="stage-benefit"><span>✳</span> Movement & enrichment</div></article></div></div><div class="journey-real">{% render 't4t-image', image: section.settings.image, fallback: 'running-dog.jpg', width: 1000, height: 750, loading: 'lazy', sizes: '(min-width: 601px) 45vw, 100vw', alt: 'A real Tracks 4 Treats dog on the dog-powered treadmill' %}<div><p class="eyebrow">REAL DOGS. THEIR OWN PACE.</p><h3>The best progress?<br>A pup who wants to try.</h3><p>A coach by their side. A comfortable space. And the freedom to walk, run, slow down, or take a break.</p><a class="button" href="{% if settings.booking_page != blank %}{{ settings.booking_page.url }}{% else %}{{ routes.root_url }}pages/booking{% endif %}">Start their first chapter</a></div></div></t4t-journey>
+{% schema %}
+{
+  "name": "Dog confidence journey",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "From first steps.\nTo full tail wags."
+    },
+    {
+      "type": "text",
+      "id": "intro",
+      "label": "Introduction",
+      "default": "Confidence is a journey. Come along for the run."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Real session photo"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Dog confidence journey"
+    }
+  ]
+}
+{% endschema %}

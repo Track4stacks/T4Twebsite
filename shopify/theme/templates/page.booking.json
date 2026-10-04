@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "t4t-booking",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

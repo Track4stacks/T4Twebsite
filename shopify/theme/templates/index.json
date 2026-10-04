@@ -1,0 +1,208 @@
+{
+  "sections": {
+    "hero": {
+      "type": "t4t-hero",
+      "settings": {}
+    },
+    "ticker": {
+      "type": "t4t-ticker",
+      "settings": {},
+      "blocks": {
+        "block1": {
+          "type": "highlight",
+          "settings": {
+            "text": "WE COME TO YOU"
+          }
+        },
+        "block2": {
+          "type": "highlight",
+          "settings": {
+            "text": "CLIMATE-CONTROLLED"
+          }
+        },
+        "block3": {
+          "type": "highlight",
+          "settings": {
+            "text": "DOG-POWERED TREADMILLS"
+          }
+        },
+        "block4": {
+          "type": "highlight",
+          "settings": {
+            "text": "TAIL-WAGGING ENERGY"
+          }
+        }
+      },
+      "block_order": [
+        "block1",
+        "block2",
+        "block3",
+        "block4"
+      ]
+    },
+    "experience": {
+      "type": "t4t-experience",
+      "settings": {}
+    },
+    "routine": {
+      "type": "t4t-routine",
+      "settings": {}
+    },
+    "pricing": {
+      "type": "t4t-pricing",
+      "settings": {},
+      "blocks": {
+        "block1": {
+          "type": "service",
+          "settings": {
+            "eyebrow": "SOLO SESSION",
+            "title": "1 dog",
+            "price": 60,
+            "duration": "30-minute appointment."
+          }
+        },
+        "block2": {
+          "type": "service",
+          "settings": {
+            "eyebrow": "BETTER TOGETHER",
+            "title": "2 dogs",
+            "price": 80,
+            "duration": "30-minute appointment."
+          }
+        },
+        "block3": {
+          "type": "service",
+          "settings": {
+            "eyebrow": "THE SMALL PACK",
+            "title": "3 dogs",
+            "price": 95,
+            "duration": "30-minute appointment."
+          }
+        },
+        "block4": {
+          "type": "service",
+          "settings": {
+            "eyebrow": "THE FULL CREW",
+            "title": "4 dogs",
+            "price": 120,
+            "duration": "60-minute appointment."
+          }
+        }
+      },
+      "block_order": [
+        "block1",
+        "block2",
+        "block3",
+        "block4"
+      ]
+    },
+    "memberships": {
+      "type": "t4t-memberships",
+      "settings": {},
+      "blocks": {
+        "block1": {
+          "type": "membership",
+          "settings": {
+            "title": "Trot",
+            "frequency": "EVERY OTHER WEEK",
+            "description": "<p>A gentle start to a regular routine.</p>"
+          }
+        },
+        "block2": {
+          "type": "membership",
+          "settings": {
+            "title": "Stride",
+            "frequency": "ONCE A WEEK",
+            "featured": true,
+            "description": "<p>A weekly visit to keep the good energy going.</p>"
+          }
+        },
+        "block3": {
+          "type": "membership",
+          "settings": {
+            "title": "Sprint",
+            "frequency": "TWICE A WEEK",
+            "description": "<p>Two weekly visits for your high-energy crew.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "block1",
+        "block2",
+        "block3"
+      ]
+    },
+    "area": {
+      "type": "t4t-area",
+      "settings": {}
+    },
+    "faq": {
+      "type": "t4t-faq",
+      "settings": {},
+      "blocks": {
+        "block1": {
+          "type": "question",
+          "settings": {
+            "question": "My dog has never used a treadmill. Is that okay?",
+            "answer": "<p>Learning something new takes a little practice. Dogs settle in at different speeds; the team typically sees them learn over 1\u20133 sessions. Your coach will help them get comfortable.</p>"
+          }
+        },
+        "block2": {
+          "type": "question",
+          "settings": {
+            "question": "Does the treadmill control my dog\u2019s speed?",
+            "answer": "<p>No. The treadmills are powered entirely by your dog\u2019s movement, without an electric motor. Your pup decides how fast or slow to go.</p>"
+          }
+        },
+        "block3": {
+          "type": "question",
+          "settings": {
+            "question": "How do I get my dog ready?",
+            "answer": "<p>Give them a bathroom break, avoid food for at least one hour before the run, and put on their harness if they have one.</p>"
+          }
+        },
+        "block4": {
+          "type": "question",
+          "settings": {
+            "question": "Can I stay with my dog?",
+            "answer": "<p>Yes. You\u2019re welcome to join your pup in the climate-controlled van during the session.</p>"
+          }
+        },
+        "block5": {
+          "type": "question",
+          "settings": {
+            "question": "What if I need to reschedule?",
+            "answer": "<p>Use the rescheduling link in your appointment confirmation email. Please make changes at least four hours before your appointment.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "block1",
+        "block2",
+        "block3",
+        "block4",
+        "block5"
+      ]
+    },
+    "booking": {
+      "type": "t4t-booking-cta",
+      "settings": {}
+    },
+    "journey": {
+      "type": "t4t-journey",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "ticker",
+    "experience",
+    "journey",
+    "routine",
+    "pricing",
+    "memberships",
+    "area",
+    "faq",
+    "booking"
+  ]
+}

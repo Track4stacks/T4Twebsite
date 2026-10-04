@@ -1,0 +1,60 @@
+<section class="hero"><div class="hero-photo">{% render 't4t-image', image: section.settings.image_1, fallback: 'running-dog.jpg', width: 1600, height: 1200, loading: 'eager', sizes: '(min-width: 750px) 50vw, 100vw', alt: 'A dog enjoying a run on a Tracks 4 Treats dog-powered treadmill', image_class: '' %}</div><div class="hero-content"><p class="eyebrow">{{ section.settings.eyebrow | escape }}</p><h1>{{ section.settings.heading | escape }}<br>{{ section.settings.heading_second | escape }} <span>{{ section.settings.heading_accent | escape }}</span></h1><p class="hero-copy">Their new favorite workout.<br>Your driveway. Our dog gym.</p><p class="hero-description">{{ section.settings.description | escape }}</p><div class="hero-actions"><a class="button" href="{% if settings.booking_page != blank %}{{ settings.booking_page.url }}{% else %}{{ routes.root_url }}pages/booking{% endif %}">{{ section.settings.button_label | escape }}</a><a class="text-link" href="#experience">Meet their new routine</a></div><p class="hero-note">20–30 minute workouts <span>•</span> From $60 per visit</p></div><div class="photo-caption"><span class="caption-icon">✳</span><div>100% DOG POWERED<small>They set the pace. We bring the good vibes.</small></div></div>{% render 't4t-image', image: section.settings.image_2, fallback: 'hero-dog.png', width: 1600, height: 1200, loading: 'eager', sizes: '(min-width: 750px) 50vw, 100vw', alt: 'Tracks 4 Treats dog and treat jar brand illustration', image_class: 'hero-brand-stamp' %}<span class="hero-index">GOOD DOGS. GREAT WORKOUTS. / 01</span></section>
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Photo"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Photo"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Big energy."
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "\u2733 AUSTIN\u2019S MOBILE DOG GYM"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Give that boundless energy somewhere to go. A climate-controlled gym, a dedicated coach, and a run at your dog\u2019s own pace. We come to you."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Book your dog\u2019s first run"
+    },
+    {
+      "type": "text",
+      "id": "heading_second",
+      "label": "Second line",
+      "default": "Better"
+    },
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "label": "Accent word",
+      "default": "days."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero"
+    }
+  ],
+  "limit": 1
+}
+{% endschema %}

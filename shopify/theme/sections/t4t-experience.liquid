@@ -1,0 +1,26 @@
+<section class="section experience" id="benefits"><div class="section-heading"><p class="eyebrow dark">{{ section.settings.eyebrow | escape }}</p><h2>{{ section.settings.heading | escape | newline_to_br }}</h2><p>For the couch-to-zoomies crowd. The tireless fetchers. And the dogs who always have one more lap in them.</p></div><div class="benefit-grid"><article><span class="feature-number">01 / THE CONVENIENCE</span><h3>Your driveway.<br>Their gym.</h3><p>Skip the car ride and make exercise part of your day. Our mobile gym brings the workout right to your door.</p></article><article><span class="feature-number">02 / THE ENVIRONMENT</span><h3>Texas heat?<br>We’re cool.</h3><p>A climate-controlled space means a comfortable workout away from hot pavement and outdoor distractions.</p></article><article><span class="feature-number">03 / THE EXPERIENCE</span><h3>Their paws.<br>Their pace.</h3><p>No motor setting the speed. Our dog-powered treadmills let your pup walk, jog, or run at their own pace.</p></article></div></section>
+{% schema %}
+{
+  "name": "Why run with us",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Their energy.\nPut to good use."
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "A LITTLE MOVEMENT. A LOT OF HAPPY."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Experience"
+    }
+  ],
+  "limit": 1
+}
+{% endschema %}

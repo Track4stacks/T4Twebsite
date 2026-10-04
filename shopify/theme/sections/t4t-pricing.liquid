@@ -1,0 +1,96 @@
+<section class="section pricing" id="pricing"><div class="pricing-top"><div><p class="eyebrow dark">{{ section.settings.eyebrow | escape }}</p><h2>{{ section.settings.heading | escape | newline_to_br }}</h2></div><p>One easy visit. Room for your crew.<br>Every option brings the gym to your door.</p></div><div class="price-grid">{% for block in section.blocks %}<article class="price-card{% if forloop.first %} featured{% endif %}" {{ block.shopify_attributes }}><div class="card-top">{{ block.settings.eyebrow | escape }}</div><h3>{{ block.settings.title | escape }}</h3><p class="price">{{ block.settings.price | times: 100 | money }}<span> / visit</span></p><p>{{ block.settings.duration | escape }}</p><a class="button{% unless forloop.first %} outline-button{% endunless %}" href="{% if settings.booking_page != blank %}{{ settings.booking_page.url }}{% else %}{{ routes.root_url }}pages/booking{% endif %}">Book a run</a></article>{% endfor %}</div><div class="subscription-note"><span>MAKE IT THEIR FAVORITE HABIT.</span><p>Want a regular routine? <a href="#memberships">Explore subscriptions</a></p></div><p class="price-note">Confirm your service, price, and availability in the booking calendar before reserving.</p></section>
+{% schema %}
+{
+  "name": "Single-session pricing",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "One dog.\nOr the whole pack."
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "GOOD ENERGY. CLEAR PRICING."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "service",
+      "name": "Service",
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow",
+          "default": "SOLO SESSION"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Service",
+          "default": "1 dog"
+        },
+        {
+          "type": "number",
+          "id": "price",
+          "label": "Visit price",
+          "default": 60
+        },
+        {
+          "type": "text",
+          "id": "duration",
+          "label": "Duration",
+          "default": "30-minute appointment."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pricing",
+      "blocks": [
+        {
+          "type": "service",
+          "settings": {
+            "eyebrow": "SOLO SESSION",
+            "title": "1 dog",
+            "price": 60,
+            "duration": "30-minute appointment."
+          }
+        },
+        {
+          "type": "service",
+          "settings": {
+            "eyebrow": "BETTER TOGETHER",
+            "title": "2 dogs",
+            "price": 80,
+            "duration": "30-minute appointment."
+          }
+        },
+        {
+          "type": "service",
+          "settings": {
+            "eyebrow": "THE SMALL PACK",
+            "title": "3 dogs",
+            "price": 95,
+            "duration": "30-minute appointment."
+          }
+        },
+        {
+          "type": "service",
+          "settings": {
+            "eyebrow": "THE FULL CREW",
+            "title": "4 dogs",
+            "price": 120,
+            "duration": "60-minute appointment."
+          }
+        }
+      ]
+    }
+  ],
+  "limit": 1
+}
+{% endschema %}

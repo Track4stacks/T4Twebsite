@@ -1,0 +1,83 @@
+<section class="section faq" id="faqs"><div><p class="eyebrow dark">{{ section.settings.eyebrow | escape }}</p><h2>{{ section.settings.heading | escape | newline_to_br }}</h2><p>Still curious? <a href="mailto:{{ settings.contact_email | escape }}">Let’s talk about your pup.</a></p></div><div class="questions">{% for block in section.blocks %}<details {{ block.shopify_attributes }}><summary>{{ block.settings.question | escape }}</summary><div class="rte">{{ block.settings.answer }}</div></details>{% endfor %}</div></section>
+{% schema %}
+{
+  "name": "Questions and answers",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "A few good\nquestions."
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "FIRST RUN? WE\u2019VE GOT YOU."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "How does it work?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Our gym comes to you.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Faq",
+      "blocks": [
+        {
+          "type": "question",
+          "settings": {
+            "question": "My dog has never used a treadmill. Is that okay?",
+            "answer": "<p>Learning something new takes a little practice. Dogs settle in at different speeds; the team typically sees them learn over 1\u20133 sessions. Your coach will help them get comfortable.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Does the treadmill control my dog\u2019s speed?",
+            "answer": "<p>No. The treadmills are powered entirely by your dog\u2019s movement, without an electric motor. Your pup decides how fast or slow to go.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "How do I get my dog ready?",
+            "answer": "<p>Give them a bathroom break, avoid food for at least one hour before the run, and put on their harness if they have one.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Can I stay with my dog?",
+            "answer": "<p>Yes. You\u2019re welcome to join your pup in the climate-controlled van during the session.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "What if I need to reschedule?",
+            "answer": "<p>Use the rescheduling link in your appointment confirmation email. Please make changes at least four hours before your appointment.</p>"
+          }
+        }
+      ]
+    }
+  ],
+  "limit": 1
+}
+{% endschema %}

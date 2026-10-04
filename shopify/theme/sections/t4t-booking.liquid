@@ -1,0 +1,75 @@
+<section id="book" class="section">
+{% if section.settings.mode == 'preview' or request.design_mode %}
+{{ 'booking-preview.css' | asset_url | stylesheet_tag }}<script src="{{ 'booking-preview.js' | asset_url }}" defer></script>
+{% render 'booking-preview', section: section %}
+{% elsif section.settings.mode == 'app' and section.settings.app_url != blank %}
+<iframe class="t4t-app-embed" src="{{ section.settings.app_url }}" title="Book a Tracks 4 Treats run" loading="lazy" allow="payment"></iframe>
+{% else %}
+<div class="t4t-booking-status"><p class="eyebrow">LET’S GET YOUR PUP MOVING</p><h2>{{ section.settings.heading | escape }}</h2><p>{{ section.settings.message | escape }}</p><a class="button" href="tel:{{ settings.phone | remove: ' ' | remove: '(' | remove: ')' | remove: '-' }}">Call {{ settings.phone | escape }}</a></div>
+{% endif %}
+{% for block in section.blocks %}{% render block %}{% endfor %}
+</section>
+{% schema %}
+{
+  "name": "Branded booking",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Let\u2019s find your next run."
+    },
+    {
+      "type": "textarea",
+      "id": "message",
+      "label": "Message while connecting",
+      "default": "Online scheduling is being updated. Call us to arrange a visit for your dog."
+    },
+    {
+      "type": "select",
+      "id": "mode",
+      "label": "Booking mode",
+      "options": [
+        {
+          "value": "contact",
+          "label": "Contact until connected"
+        },
+        {
+          "value": "preview",
+          "label": "Design preview (no transactions)"
+        },
+        {
+          "value": "app",
+          "label": "Connected branded booking app"
+        }
+      ],
+      "default": "contact"
+    },
+    {
+      "type": "url",
+      "id": "app_url",
+      "label": "Branded booking app URL"
+    },
+    {
+      "type": "product",
+      "id": "membership_product",
+      "label": "Membership product"
+    },
+    {
+      "type": "paragraph",
+      "content": "Use a verified HTTPS URL for your branded scheduling app. A theme cannot access private calendar APIs securely by itself. Never paste API tokens here. The design preview uses example availability and cannot create appointments."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Branded booking"
+    }
+  ],
+  "limit": 1
+}
+{% endschema %}

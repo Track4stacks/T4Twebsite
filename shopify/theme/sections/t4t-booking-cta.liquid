@@ -1,0 +1,5 @@
+{{ 'journey.css' | asset_url | stylesheet_tag }}
+<section class="section booking-cta" id="book"><div><p class="eyebrow">THEIR NEXT GOOD DAY STARTS HERE.</p><h2>A little run.<br>A whole lot of <span>happy.</span></h2></div><div><p>Pick your pack. Find your rhythm. Plan their next good day, right here.</p><a class="button" href="{% if settings.booking_page != blank %}{{ settings.booking_page.url }}{% else %}{{ routes.root_url }}pages/booking{% endif %}">Plan your dog’s run</a><small>One-time visits · Biweekly · Weekly · Twice a week</small></div></section>
+{% schema %}
+{"name":"Booking invitation","settings":[],"presets":[{"name":"Booking invitation"}]}
+{% endschema %}
